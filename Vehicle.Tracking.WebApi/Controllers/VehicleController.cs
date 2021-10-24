@@ -14,6 +14,7 @@ namespace Vehicle.Tracking.WebApi.Controllers
         [HttpGet("gettest")]
         public async Task<IActionResult> Get()
         {
+            
             return  Ok("Test");
         }
     }
