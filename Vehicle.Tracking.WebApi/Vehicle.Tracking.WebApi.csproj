@@ -8,4 +8,10 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Vehicle.Tracking.Business\Vehicle.Tracking.Business.csproj" />
+    <ProjectReference Include="..\Vehicle.Tracking.DataAccess\Vehicle.Tracking.DataAccess.csproj" />
+    <ProjectReference Include="..\Vehicle.Tracking.Entities\Vehicle.Tracking.Entities.csproj" />
+  </ItemGroup>
+
 </Project>

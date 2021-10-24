@@ -7,6 +7,13 @@
   <ItemGroup>
     <PackageReference Include="FluentValidation" Version="10.3.4" />
     <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
+    <PackageReference Include="MongoDB.Bson" Version="2.13.2" />
+    <PackageReference Include="MongoDB.Driver" Version="2.13.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Entities\Concrete\" />
+    <Folder Include="Entities\Dtos\" />
   </ItemGroup>
 
 </Project>
