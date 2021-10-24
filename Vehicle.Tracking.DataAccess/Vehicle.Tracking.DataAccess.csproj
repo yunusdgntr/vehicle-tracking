@@ -13,4 +13,9 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.11" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Vehicle.Tracking.Core\Vehicle.Tracking.Core.csproj" />
+    <ProjectReference Include="..\Vehicle.Tracking.Entities\Vehicle.Tracking.Entities.csproj" />
+  </ItemGroup>
+
 </Project>

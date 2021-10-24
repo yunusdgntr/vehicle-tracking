@@ -11,6 +11,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Vehicle.Tracking.DataAccess.Abstract;
+using Vehicle.Tracking.DataAccess.Concrete.EntityFramework;
 
 namespace Vehicle.Tracking.WebApi
 {
@@ -31,6 +33,8 @@ namespace Vehicle.Tracking.WebApi
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Vehicle.Tracking.WebApi", Version = "v1" });
             });
+
+            services.AddTransient<IUserRepository, UserRepository>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

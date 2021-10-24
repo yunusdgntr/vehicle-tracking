@@ -1,4 +1,5 @@
 ﻿using System;
+using Vehicle.Tracking.Core.Entities;
 
 namespace Vehicle.Tracking.Entities.Models.Base
 {
