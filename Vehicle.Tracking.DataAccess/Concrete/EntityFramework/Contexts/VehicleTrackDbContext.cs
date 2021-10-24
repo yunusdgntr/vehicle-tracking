@@ -74,7 +74,8 @@ namespace Vehicle.Tracking.DataAccess.Concrete.EntityFramework.Contexts
                     AddedDate = DateTime.Now,
                     Status = (int)StatusType.Active,
                     RoleId = 1,
-                    AddedBy = 1
+                    AddedBy = 1,
+                    Id=1
                 });
         }
 
