@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using Vehicle.Tracking.Core.Entities;
 using Vehicle.Tracking.Entities.Models.Base;
 
 namespace Vehicle.Tracking.Entities.Models
@@ -39,6 +38,6 @@ namespace Vehicle.Tracking.Entities.Models
             }
         }
 
-        public ICollection<Right> Right { get; set; }
+        public virtual ICollection<Right> Right { get; set; }
     }
 }

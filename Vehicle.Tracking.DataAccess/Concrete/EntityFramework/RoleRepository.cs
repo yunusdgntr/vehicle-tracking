@@ -5,12 +5,10 @@ using Vehicle.Tracking.Entities.Models;
 
 namespace Vehicle.Tracking.DataAccess.Concrete.EntityFramework
 {
-    public class UserRepository : EfEntityRepositoryBase<User, VehicleTrackDbContext>, IUserRepository
+    public class RoleRepository : EfEntityRepositoryBase<Role, VehicleTrackDbContext>, IRoleRepository
     {
-        public UserRepository(VehicleTrackDbContext context): base(context)
+        public RoleRepository(VehicleTrackDbContext context) : base(context)
         {
         }
-
-    
     }
 }

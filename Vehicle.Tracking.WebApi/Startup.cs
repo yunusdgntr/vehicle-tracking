@@ -35,6 +35,10 @@ namespace Vehicle.Tracking.WebApi
             });
 
             services.AddTransient<IUserRepository, UserRepository>();
+            services.AddTransient<IVehicleRepository, VehicleRepository>();
+            services.AddTransient<IRoleRepository, RoleRepository>();
+            services.AddTransient<IRightRepository, RightRepository>();
+            services.AddTransient<ILocationHistoryRepository, LocationHistoryRepository>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
