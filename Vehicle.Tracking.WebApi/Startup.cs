@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -11,6 +12,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Vehicle.Tracking.Business.Services.Abstract;
+using Vehicle.Tracking.Business.Services.Concrete;
 using Vehicle.Tracking.DataAccess.Abstract;
 using Vehicle.Tracking.DataAccess.Concrete.EntityFramework;
 using Vehicle.Tracking.DataAccess.Concrete.EntityFramework.Contexts;
@@ -40,6 +43,8 @@ namespace Vehicle.Tracking.WebApi
             services.AddTransient<IRoleRepository, RoleRepository>();
             services.AddTransient<IRightRepository, RightRepository>();
             services.AddTransient<ILocationHistoryRepository, LocationHistoryRepository>();
+            services.AddTransient<IUserManager, UserManager>();
+       
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
