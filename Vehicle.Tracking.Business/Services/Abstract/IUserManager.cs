@@ -1,6 +1,8 @@
 ﻿using System.Threading.Tasks;
 using Vehicle.Tracking.Business.Handlers.Authorizations.Queries;
 using Vehicle.Tracking.Entities.Models;
+using Vehicle.Tracking.Entities.Models.Request;
+using Vehicle.Tracking.Entities.Models.Response;
 
 namespace Vehicle.Tracking.Business.Services.Abstract
 {
@@ -10,5 +12,6 @@ namespace Vehicle.Tracking.Business.Services.Abstract
         Task<User> UpdateAsync(User entity);
         Task DeleteAsync(User entity);
         Task<User> GetAsync(LoginUserQuery query);
+        UserResponse GetByFilter(UserRequest request);
     }
 }

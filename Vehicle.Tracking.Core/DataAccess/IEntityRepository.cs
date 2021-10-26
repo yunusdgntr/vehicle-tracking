@@ -24,6 +24,7 @@ namespace Vehicle.Tracking.Core.DataAccess
         TResult InTransaction<TResult>(Func<TResult> action, Action successAction = null, Action<Exception> exceptionAction = null);
         Task<int> GetCountAsync(Expression<Func<T, bool>> expression = null);
         int GetCount(Expression<Func<T, bool>> expression = null);
+        IQueryable<T> GetAllInclude(Expression<Func<T, bool>> filter = null, string[] include = null);
 
     }
 }
