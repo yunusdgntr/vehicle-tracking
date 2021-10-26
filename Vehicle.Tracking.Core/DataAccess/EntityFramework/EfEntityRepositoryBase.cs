@@ -152,5 +152,25 @@ namespace Vehicle.Tracking.Core.DataAccess.EntityFramework
             return expression == null ? Context.Set<TEntity>().Count() : Context.Set<TEntity>().Count(expression);
         }
 
+        public IQueryable<TEntity> GetAllInclude(Expression<Func<TEntity, bool>> filter = null, string[] include = null)
+        {
+            if (include != null)
+            {
+                var query = Context.Set<TEntity>().AsQueryable();
+                foreach (var item in include)
+                {
+                    query = query.Include(item);
+                }
+                return filter == null
+                     ? query
+                     : query.Where(filter);
+            }
+            else
+            {
+                return filter == null
+                    ? Context.Set<TEntity>()
+                    : Context.Set<TEntity>().Where(filter);
+            }
+        }
     }
 }
