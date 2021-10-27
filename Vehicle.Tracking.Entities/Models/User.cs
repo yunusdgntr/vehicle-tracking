@@ -40,6 +40,6 @@ namespace Vehicle.Tracking.Entities.Models
             }
         }
 
-        public virtual ICollection<Right> Right { get; set; }
+        public virtual ICollection<Right> Rights { get; set; }
     }
 }

@@ -1,0 +1,34 @@
+This program has encountered a fatal error and cannot continue running at Wed Oct 27 12:40:11 2021
+The following diagnostic information is available:
+
+         Reason: 0x00000006
+        Message: Termination of \SystemRoot\system32\AppLoader.exe was due to fatal error 0xC0000001
+        Address: 0x3ffface53094
+    Stack Trace:
+                 file://package4/windows/system32/sqlpal.dll+0x0000000000298ECC
+                 file://package4/windows/system32/sqlpal.dll+0x0000000000296E75
+                 file://package4/windows/system32/sqlpal.dll+0x0000000000253200
+                 file://package4/windows/system32/sqlpal.dll+0x0000000000253094
+                 file://package4/windows/system32/sqlpal.dll+0x0000000000251EEB
+                 file://package4/windows/system32/sqlpal.dll+0x00000000002ACC0B
+                 file://package4/windows/system32/sqlpal.dll+0x0000000000392878
+                 file:///windows/system32/AppLoader.exe+0x0000000000004729
+                 file:///windows/system32/AppLoader.exe+0x000000000000479B
+                 file:///windows/system32/AppLoader.exe+0x00000000000047DB
+                 file:///windows/system32/AppLoader.exe+0x000000000000FB5E
+                 file:///Windows/SYSTEM32/KERNEL32.DLL+0x0000000000014414
+                 file:///windows/system32/ntdll.dll+0x0000000000075541
+        Modules:
+                 file://package4/windows/system32/sqlpal.dll=1931B6761AEA45328EFD81911F76CC771
+                 file:///windows/system32/AppLoader.exe=E26840CDCF2948C689C8157A6D00803F1
+                 file:///Windows/SYSTEM32/KERNEL32.DLL=C715300FB2664729A6126A3F591E6F302
+                 file:///windows/system32/ntdll.dll=45137AA3F9814512B3123991067EEE6E2
+        Process: 9 - sqlservr
+         Thread: 39 (application thread 0x74)
+    Instance Id: 093bd3ae-2b84-4558-882d-b91fa3658bd6
+       Crash Id: 949bfbf4-744d-41cf-83b2-0aedad2e5ddb
+    Build stamp: 0c7a1ef37ba822500bb8abdb6909fdcdd9030a2693743d0651ffaf84683a5082
+   Distribution: Ubuntu 20.04.3 LTS
+     Processors: 4
+   Total Memory: 9944711168 bytes
+      Timestamp: Wed Oct 27 12:40:11 2021

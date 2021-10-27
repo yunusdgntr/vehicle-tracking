@@ -21,6 +21,7 @@ namespace Vehicle.Tracking.DataAccess.Concrete.EntityFramework.Contexts
                                                                                 : base(options)
         {
             Configuration = configuration;
+            
         }
 
         /// <summary>
@@ -45,6 +46,7 @@ namespace Vehicle.Tracking.DataAccess.Concrete.EntityFramework.Contexts
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
             modelBuilder.Entity<User>().HasData(
                 new User
@@ -83,7 +85,7 @@ namespace Vehicle.Tracking.DataAccess.Concrete.EntityFramework.Contexts
         {
             if (!optionsBuilder.IsConfigured)
             {
-                base.OnConfiguring(optionsBuilder.UseSqlServer(Configuration.GetConnectionString("ConnectionStrings:VehicleTrackMsqlContext")).EnableSensitiveDataLogging());
+                base.OnConfiguring(optionsBuilder.UseSqlServer(Configuration.GetConnectionString("VehicleTrackMsqlContext")).EnableSensitiveDataLogging());
 
             }
         }

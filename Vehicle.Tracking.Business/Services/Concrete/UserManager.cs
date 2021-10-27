@@ -91,7 +91,7 @@ namespace Vehicle.Tracking.Business.Services.Concrete
         public UserResponse GetByFilter(UserRequest request)
         {
             var response = new UserResponse() { Entity = new User() };
-            var query = _userRepository.GetAllInclude(null, new string[] { "Right", "Right.Role" });
+            var query = _userRepository.GetAllInclude(null, new string[] { "Rights", "Rights.Role" });
 
             if (!string.IsNullOrEmpty(request.Filter.RefreshToken))
             {
