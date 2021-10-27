@@ -9,9 +9,9 @@ services:
             - db
         command: ["dotnet", "ef", "database update","--context MsDbContext"]
         environment:
-            - ASPNETCORE_ENVIRONMENT=Development
-            - ASPNETCORE_URLS=http://*:80;https://*:443
-            - ASPNETCORE_HTTPS_PORT=443 
+             - ASPNETCORE_ENVIRONMENT=Development
+             - ASPNETCORE_URLS=http://+:80
+
     db:
         image: "mcr.microsoft.com/mssql/server:2019-latest"
         ports:
@@ -20,6 +20,3 @@ services:
             - ACCEPT_EULA=Y
             - MSSQL_PID=Developer
             - SA_PASSWORD=testTest*
-            - MSSQL_DB=VehicleTrackDb
-            - MSSQL_USER=sa
-            - MSSQL_PASSWORD=testTest*

@@ -119,7 +119,11 @@ namespace Vehicle.Tracking.WebApi
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Vehicle.Tracking.WebApi v1"));
             }
-
+            using (var serviceScope = app.ApplicationServices.GetRequiredService<IServiceScopeFactory>().CreateScope())
+            {
+                var context = serviceScope.ServiceProvider.GetService<VehicleTrackDbContext>();
+                context.Database.EnsureCreated();
+            }
             app.UseHttpsRedirection();
             app.UseAuthentication();
             app.UseRouting();
