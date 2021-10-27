@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 using Vehicle.Tracking.Entities.Models.Base;
 
 namespace Vehicle.Tracking.Entities.Models
@@ -23,6 +24,7 @@ namespace Vehicle.Tracking.Entities.Models
 
         [Required]
         [MaxLength(255)]
+        [JsonIgnore]
         public string Password { get; set; }
 
         public string NameSurname

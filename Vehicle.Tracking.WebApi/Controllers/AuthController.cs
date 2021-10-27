@@ -5,6 +5,9 @@ using Microsoft.Extensions.Configuration;
 using System.Threading.Tasks;
 using Vehicle.Tracking.Business.Handlers.Authorizations.Queries;
 using Vehicle.Tracking.Business.Services.Abstract;
+using Vehicle.Tracking.Entities.Enums;
+using Vehicle.Tracking.Entities.Models.Filter;
+using Vehicle.Tracking.Entities.Models.Request;
 
 namespace Vehicle.Tracking.WebApi.Controllers
 {
@@ -15,6 +18,8 @@ namespace Vehicle.Tracking.WebApi.Controllers
     {
         private readonly IConfiguration _configuration;
         private readonly IUserManager _userManager;
+       
+
         public AuthController(IConfiguration configuration, IUserManager userManager)
         {
             _configuration = configuration;
@@ -22,20 +27,23 @@ namespace Vehicle.Tracking.WebApi.Controllers
         }
 
         [AllowAnonymous]
-        [Consumes("application/json")]
-        [Produces("application/json", "text/plain")]
-        [ProducesResponseType(StatusCodes.Status401Unauthorized, Type = typeof(string))]
         [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody] LoginUserQuery loginModel)
         {
-            var result = await _userManager.GetAsync(loginModel);
-
-            if (result!=null)
+            if (loginModel == null)
             {
-                return Ok(result);
+                return BadRequest("User is not set.");
             }
 
-            return Unauthorized(result);
+            var user = await _userManager.GetAsync(loginModel);
+
+            if (user == null || user.Status != (int)StatusType.Active)
+            {
+                return Unauthorized();
+            }
+            var s = _userManager.Authenticate(new AuthenticateRequest { Email = loginModel.Email, Password = loginModel.Password });
+       
+            return Ok(s);
         }
     }
 }

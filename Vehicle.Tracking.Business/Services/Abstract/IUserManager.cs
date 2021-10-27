@@ -13,5 +13,6 @@ namespace Vehicle.Tracking.Business.Services.Abstract
         Task DeleteAsync(User entity);
         Task<User> GetAsync(LoginUserQuery query);
         UserResponse GetByFilter(UserRequest request);
+        AuthenticateResponse Authenticate(AuthenticateRequest model);
     }
 }

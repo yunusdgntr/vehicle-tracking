@@ -9,8 +9,6 @@ namespace Vehicle.Tracking.Entities.Models.Response
 
         public List<User> EntityList { get; set; }
 
-        public Token Token { get; set; }
-
         public Error Error { get; set; }
     }
 }

@@ -2,17 +2,13 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Options;
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Security.Claims;
-using System.Text;
-using System.Threading.Tasks;
 using Vehicle.Tracking.Business.Services.Abstract;
 
 namespace Vehicle.Tracking.Business.Services.Concrete
 {
-   
+
     public class AntiForgeryCookieManager : IAntiForgeryCookieManager
     {
         private const string XsrfTokenKey = "XSRF-TOKEN";

@@ -42,11 +42,11 @@ namespace Vehicle.Tracking.Business.Services.Concrete
             return _repository.Update(entity);
         }
 
-   
 
-        public async Task<IEnumerable<Right>> FindUserRolesAsync(int userId)
+
+        public IEnumerable<Right> FindUserRoles(int userId)
         {
-            return await _repository.GetListAsync(x=>x.UserId==userId);
+            return _repository.GetAllInclude(x => x.UserId == userId, new string[] { "Role" });
         }
 
         public Task<bool> IsUserInRoleAsync(int userId, string roleName)

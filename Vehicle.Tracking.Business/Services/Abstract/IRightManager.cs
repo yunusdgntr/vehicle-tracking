@@ -16,7 +16,7 @@ namespace Vehicle.Tracking.Business.Services.Abstract
 
         List<Right> GetList();
 
-        Task<IEnumerable<Right>> FindUserRolesAsync(int userId);
+        IEnumerable<Right> FindUserRoles(int userId);
 
         Task<bool> IsUserInRoleAsync(int userId, string roleName);
 
