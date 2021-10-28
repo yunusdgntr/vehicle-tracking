@@ -4,4 +4,12 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Dtos\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Vehicle.Tracking.Core\Vehicle.Tracking.Core.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -1,0 +1,22 @@
+sqlservr
+  Version 15.0.4178.1
+  Build ID 9b107e1141b92276ef16861bffc1a60142566664fee7ee1c920f17852bb5eca7
+  Build Type release
+  Git Version 196c1186
+  Built at Tue Sep 28 05:46:10 GMT 2021
+
+PAL
+  Build ID 0c7a1ef37ba822500bb8abdb6909fdcdd9030a2693743d0651ffaf84683a5082
+  Build Type release
+  Git Version bbe06a0a9
+  Built at Tue Sep 28 05:43:56 GMT 2021
+
+Packages
+  system.security                         6.2.9200.6,bbe06a0a9,
+  system.certificates                     6.2.9200.6,bbe06a0a9,
+  secforwarderxplat                       15.0.4178.1
+  sqlservr                                15.0.4178.1
+  system.common                           10.0.17134.2145.202104262
+  system.netfx                            4.7.0.0.202104262
+  system                                  6.2.9200.6,bbe06a0a9,
+  sqlagent                                15.0.4178.1
