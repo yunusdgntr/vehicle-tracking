@@ -7,6 +7,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Vehicle.Tracking.Business.Handlers.Authorizations.Queries;
 using Vehicle.Tracking.Business.Services.Abstract;
 using Vehicle.Tracking.Entities.Models;
 using Vehicle.Tracking.Entities.Models.Common;
@@ -46,15 +47,15 @@ namespace Vehicle.Tracking.WebApi.Helpers
                     IssuerSigningKey = new SymmetricSecurityKey(key),
                     ValidateIssuer = false,
                     ValidateAudience = false,
-                    // set clockskew to zero so tokens expire exactly at token expiration time (instead of 5 minutes later)
                     ClockSkew = TimeSpan.Zero
                 }, out SecurityToken validatedToken);
 
                 var jwtToken = (JwtSecurityToken)validatedToken;
-                var userId = int.Parse(jwtToken.Claims.First(x => x.Type == "id").Value);
+                var userId = int.Parse(jwtToken.Claims.First(x => x.Type == "userId").Value);
 
-                // attach user to context on successful jwt validation
-                context.Items["User"] = new User { Email = "r" };//userService.get(userId);
+                // TODO
+                var user = userManager.GetAsync(new LoginUserQuery { }).Result;
+                context.Items["User"] = user;//userService.get(userId);
             }
             catch
             {

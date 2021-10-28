@@ -71,6 +71,7 @@ namespace Vehicle.Tracking.WebApi
             services.AddTransient<ILocationHistoryRepository, LocationHistoryRepository>();
             services.AddTransient<IUserManager, UserManager>();
             services.AddTransient<IRightManager, RightManager>();
+            services.AddTransient<IVehicleManager, VehicleManager>();
             services.AddTransient<IAntiForgeryCookieManager, AntiForgeryCookieManager>();
             
 

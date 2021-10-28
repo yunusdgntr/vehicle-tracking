@@ -62,7 +62,7 @@ namespace Vehicle.Tracking.Business.Services.Concrete
                 new Claim("Email", user.Email, ClaimValueTypes.String, _configuration.Value.Issuer),
                 new Claim("DisplayName", user.Name+" "+ user.Surname, ClaimValueTypes.String, _configuration.Value.Issuer)
             };
-            var roles = _rightManager.FindUserRoles(user.Id);
+            var roles = _rightManager.FindUserRoles(user.Id).ToList();
             foreach (var role in roles)
             {
                 claims.Add(new Claim(ClaimTypes.Role, role.Role.Name));

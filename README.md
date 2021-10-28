@@ -33,6 +33,20 @@ dotnet run
 ```sh
 Browse https://localhost:5001/swagger/index.html
 ```
+You can get token with following payload
+```sh
+{
+  "email": "testadmin@test.com",
+  "password": "testpwd!"
+}
+```
+```sh
+{
+  "email": "testcustomer@test.com",
+  "password": "testcustomerpwd!"
+}
+```
+<img  width="600" alt="GIF" src="https://github.com/yunusdgntr/vehicle-tracking/token.jpg" />
 
 ## Docker Compose
 Vehicle Tracking Api is very easy to install and deploy with docker-compose.

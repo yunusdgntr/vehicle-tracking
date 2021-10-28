@@ -48,18 +48,34 @@ namespace Vehicle.Tracking.DataAccess.Concrete.EntityFramework.Contexts
         {
             
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+            #region seed user
             modelBuilder.Entity<User>().HasData(
                 new User
                 {
                     AddedBy = 1,
                     AddedDate = DateTime.Now,
                     Status = (int)StatusType.Active,
-                    Name = "Test",
+                    Name = "Test Admin",
                     Surname="Test",
-                    Email = "test@test.com",
-                    Password = "",
+                    Email = "testadmin@test.com",
+                    Password = "testpwd!",
                     Id = 1
                 });
+            modelBuilder.Entity<User>().HasData(
+             new User
+             {
+                 AddedBy = 1,
+                 AddedDate = DateTime.Now,
+                 Status = (int)StatusType.Active,
+                 Name = "Test Customer",
+                 Surname = "Test",
+                 Email = "testcustomer@test.com",
+                 Password = "testcustomerpwd!",
+                 Id = 2
+             });
+            #endregion
+
+            #region seed role and right
             modelBuilder.Entity<Role>().HasData(
                 new Role
                 {
@@ -69,6 +85,15 @@ namespace Vehicle.Tracking.DataAccess.Concrete.EntityFramework.Contexts
                     Name = "Admin",
                     Id = 1
                 });
+            modelBuilder.Entity<Role>().HasData(
+            new Role
+            {
+                AddedBy = 1,
+                AddedDate = DateTime.Now,
+                Status = (int)StatusType.Active,
+                Name = "Customer",
+                Id = 2
+            });
             modelBuilder.Entity<Right>().HasData(
                 new Right
                 {
@@ -79,6 +104,17 @@ namespace Vehicle.Tracking.DataAccess.Concrete.EntityFramework.Contexts
                     AddedBy = 1,
                     Id=1
                 });
+            modelBuilder.Entity<Right>().HasData(
+              new Right
+              {
+                  UserId = 2,
+                  AddedDate = DateTime.Now,
+                  Status = (int)StatusType.Active,
+                  RoleId = 2,
+                  AddedBy = 1,
+                  Id = 2
+              });
+            #endregion
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
