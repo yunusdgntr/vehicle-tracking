@@ -46,7 +46,7 @@ You can get token with following payload
   "password": "testcustomerpwd!"
 }
 ```
-<img  width="600" alt="GIF" src="https://github.com/yunusdgntr/vehicle-tracking/token.jpg" />
+<img  width="600" alt="GIF" src="https://raw.githubusercontent.com/yunusdgntr/vehicle-tracking/develop/token.jpg" />
 
 ## Docker Compose
 Vehicle Tracking Api is very easy to install and deploy with docker-compose.
