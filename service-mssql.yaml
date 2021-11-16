@@ -1,39 +1,12 @@
-# Create the SQL Server deployment
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: v1
+kind: Service
 metadata:
-  name: mssql-deployment
+  name: mssql-service
 spec:
-  replicas: 1
   selector:
-    matchLabels:
-      app: mssql
-  strategy:
-    type: Recreate
-  template:
-    metadata:
-      labels:
-        app: mssql
-    spec:
-      terminationGracePeriodSeconds: 10
-      securityContext:
-        fsGroup: 1000
-      containers:
-      - name: mssql
-        image: mcr.microsoft.com/mssql/rhel/server:2019-latest
-        resources:
-          limits:
-            memory: "1024Mi"
-            cpu: "2000m"
-        env:
-        - name: ACCEPT_EULA
-          value: "Y"
-        - name: SA_PASSWORD
-          value: "testTest*"
-        volumeMounts:
-        - name: mssqldb
-          mountPath: /var/opt/mssql
-      volumes:
-      - name: mssqldb
-        persistentVolumeClaim:
-          claimName: mssql-data
+    app: mssql
+  ports:
+    - protocol: TCP
+      port: 1433
+      targetPort: 1433
+  type: LoadBalancer

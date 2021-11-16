@@ -1,0 +1,21 @@
+kind: StorageClass 
+apiVersion: storage.k8s.io/v1 
+metadata: 
+     name: mssql-disk 
+     namespace: egitim-ns 
+provisioner: kubernetes.io/mssql-disk 
+parameters: 
+  storageaccounttype: Standard_LRS 
+  kind: Managed 
+--- 
+kind: PersistentVolumeClaim 
+apiVersion: v1 
+metadata: 
+  name: mssql-data 
+  namespace: egitim-ns 
+spec: 
+  accessModes: 
+  - ReadWriteOnce 
+  resources: 
+    requests: 
+      storage: 8Gi 

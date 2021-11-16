@@ -19,3 +19,26 @@ kubectl get pods
 kubectl get services
 
 kubectl create -f pvc.yaml
+
+# Create the load balancing service
+kubectl apply -f service-mssql.yaml --record
+
+
+# List the running pods and services
+kubectl get pods
+kubectl get services
+ 
+# TO fetch details about the POD
+kubectl describe pod mssql
+
+# Get all of the running components
+kubectl get all
+ 
+# for Troubelshooting purpose you can use this command to view the events  
+ 
+kubectl describe pod -l app=mssql
+ 
+ 
+ 
+# Display the container logs
+kubectl logs -l app=mssql
