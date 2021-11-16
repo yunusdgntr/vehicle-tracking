@@ -3,15 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31019.35
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vehicle.Tracking.WebApi", "Vehicle.Tracking.WebApi\Vehicle.Tracking.WebApi.csproj", "{74296E8B-9E22-46D4-B3C7-4C7AAA6EF24F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vehicle.Tracking.WebApi", "Vehicle.Tracking.WebApi\Vehicle.Tracking.WebApi.csproj", "{74296E8B-9E22-46D4-B3C7-4C7AAA6EF24F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vehicle.Tracking.Core", "Vehicle.Tracking.Core\Vehicle.Tracking.Core.csproj", "{09EA7107-73E0-46B3-99BA-E7D4DCBD563E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vehicle.Tracking.Core", "Vehicle.Tracking.Core\Vehicle.Tracking.Core.csproj", "{09EA7107-73E0-46B3-99BA-E7D4DCBD563E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vehicle.Tracking.DataAccess", "Vehicle.Tracking.DataAccess\Vehicle.Tracking.DataAccess.csproj", "{CF8ED181-1D0E-47DE-9E01-74B421CC4380}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vehicle.Tracking.DataAccess", "Vehicle.Tracking.DataAccess\Vehicle.Tracking.DataAccess.csproj", "{CF8ED181-1D0E-47DE-9E01-74B421CC4380}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vehicle.Tracking.Entities", "Vehicle.Tracking.Entities\Vehicle.Tracking.Entities.csproj", "{E75E8ACF-6894-42F4-9F1B-AAE3792563E3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vehicle.Tracking.Entities", "Vehicle.Tracking.Entities\Vehicle.Tracking.Entities.csproj", "{E75E8ACF-6894-42F4-9F1B-AAE3792563E3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vehicle.Tracking.Business", "Vehicle.Tracking.Business\Vehicle.Tracking.Business.csproj", "{4CED9093-7B27-4006-93B2-8C17489EA6C3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vehicle.Tracking.Business", "Vehicle.Tracking.Business\Vehicle.Tracking.Business.csproj", "{4CED9093-7B27-4006-93B2-8C17489EA6C3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api.Gateway", "Api.Getway\Api.Gateway.csproj", "{A13D5B12-AC2B-4F25-BF7C-D1A8CFFD76FD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{4CED9093-7B27-4006-93B2-8C17489EA6C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4CED9093-7B27-4006-93B2-8C17489EA6C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4CED9093-7B27-4006-93B2-8C17489EA6C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A13D5B12-AC2B-4F25-BF7C-D1A8CFFD76FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A13D5B12-AC2B-4F25-BF7C-D1A8CFFD76FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A13D5B12-AC2B-4F25-BF7C-D1A8CFFD76FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A13D5B12-AC2B-4F25-BF7C-D1A8CFFD76FD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

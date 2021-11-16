@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vehicle-tracking-api
+spec:
+  selector:
+    matchLabels:
+      app: vehicle-tracking-api
+  template:
+    metadata:
+      labels:
+        app: vehicle-tracking-api
+    spec:
+      containers:
+      - name: trackingapi
+        image: yunusdgntr/trackingapi:v1
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 8000
+          name: first
+        - containerPort: 8001
+          name: second
+

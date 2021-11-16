@@ -1,0 +1,21 @@
+# List nodes
+kubectl get nodes
+
+# Display the persistent volume and claim
+kubectl get pv
+kubectl get pvc
+
+# Optional: In case if you want to explore differennt choices of storage classes you can run this line  otherwise you can ignore it
+kubectl get storageclass
+
+# use complex password
+kubectl create secret generic mssql-secret --from-literal=SA_PASSWORD="testTest*"
+ 
+# Deploy the SQL Server 2019 container
+kubectl apply -f deployment-mssql.yaml --record
+
+# List the running pods and services
+kubectl get pods
+kubectl get services
+
+kubectl create -f pvc.yaml
